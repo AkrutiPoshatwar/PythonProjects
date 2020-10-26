@@ -1,0 +1,45 @@
+{
+	"users": [
+		{
+			"acc_id": "101",
+			"name": "bob",
+			"current_balance": 24000
+		},
+		{
+			"acc_id": "102",
+			"name": "alice",
+			"current_balance": 30000
+		},
+		{
+			"acc_id": "105",
+			"name": "arjun",
+			"current_balance": 35000
+		}
+	],
+	"bank_transactions": [
+		{
+			"acc_id": "101",
+			"date": "12/10/2020 03:00",
+			"amount": 2000,
+			"type": "debit"
+		},
+		{
+			"acc_id": "102",
+			"date": "15/10/2020 03:00",
+			"amount": 200,
+			"type": "debit"
+		},
+		{
+			"acc_id": "101",
+			"date": "15/10/2020 13:00",
+			"amount": 5000,
+			"type": "credit"
+		},
+		{
+			"acc_id": "105",
+			"date": "20/10/2020 03:00",
+			"amount": 2000,
+			"type": "credit"
+		}
+	]
+}
