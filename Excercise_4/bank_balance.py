@@ -4,8 +4,8 @@ with open('transaction_log.json', 'r') as f:
     data = json.load(f)
 
 users_dict = {}
-for i in range(len(data['users'])):
-    users_dict.update({data['users'][i]['account_id']: data['users'][i]['current_balance']})
+for user in data['users']:
+    users_dict.update({user['account_id']:user['current_balance']})
 
 
 for transaction in data['bank_transactions']:
