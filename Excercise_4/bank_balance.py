@@ -5,8 +5,7 @@ with open('transaction_log.json', 'r') as f:
 
 users_dict = {}
 for user in data['users']:
-    users_dict.update({user['account_id']:user['current_balance']})
-
+    users_dict[user['account_id']] = user['current_balance']
 
 for transaction in data['bank_transactions']:
     if transaction['account_id'] in users_dict:
