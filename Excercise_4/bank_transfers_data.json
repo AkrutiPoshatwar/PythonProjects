@@ -1,0 +1,27 @@
+{
+    "users": [
+        {
+            "account_id": "101",
+            "name": "bob",
+            "current_balance": 24000
+        },
+        {
+            "account_id": "102",
+            "name": "alice",
+            "current_balance": 30000
+        },
+        {
+            "account_id": "105",
+            "name": "arjun",
+            "current_balance": 35000
+        }
+    ],
+    "bank_transfers": [
+        {
+            "from_account_id": "101",
+            "to_account_id": "103",
+            "amount": 440,
+            "date": "2020-10-28 11:46:30.324967"
+        }
+    ]
+}
