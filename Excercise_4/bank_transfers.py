@@ -14,20 +14,35 @@ class IncorrectAccountId(Exception):
     def __str__(self):
         return self.message
 
+class InsufficientAmount(Exception):
+    def __init__(self, message = "Insufficient amount in acount"):
+        self.message = message
+    def __str__(self):
+        return self.message
+
 users_dict = {}
 for user in data['users']:
     users_dict[user['account_id']] = user['current_balance']
 
 try:
-    if from_account in users_dict.keys() and to_account in users_dict.keys() and transfer_amount <= users_dict[from_account]:
-        users_dict[from_account] -= int(transfer_amount)
-        users_dict[to_account] += int(transfer_amount)
+    if from_account in users_dict.keys() and to_account in users_dict.keys():
+        if transfer_amount <=users_dict[from_account]:
+            users_dict[from_account] -= int(transfer_amount)
+            users_dict[to_account] += int(transfer_amount)
+        else:
+            raise InsufficientAmount
     else:
         raise IncorrectAccountId
 
 except IncorrectAccountId as e:
     print(e)
     exit()
+
+except InsufficientAmount as ex:
+    print(ex)
+    exit()
+
+
 print(users_dict)
 
 
