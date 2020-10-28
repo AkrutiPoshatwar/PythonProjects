@@ -15,44 +15,31 @@ class IncorrectAccountId(Exception):
         return self.message
 
 users_dict = {}
-
-account_ids =[]
-for user in data['users']:
-    account_ids.append(user['account_id'])
-    print(account_ids)
-
 for user in data['users']:
     users_dict[user['account_id']] = user['current_balance']
 
-    try:
-        if user['account_id'] == str(from_account):
-            users_dict[user['account_id']] -= int(transfer_amount)
+try:
+    if from_account in users_dict.keys() and to_account in users_dict.keys() and transfer_amount <= users_dict[from_account]:
+        users_dict[from_account] -= int(transfer_amount)
+        users_dict[to_account] += int(transfer_amount)
+    else:
+        raise IncorrectAccountId
 
-        elif user['account_id'] == str(to_account):
-            users_dict[user['account_id']] += int(transfer_amount)
-
-        elif str(from_account) not in account_ids or str(to_account) not in account_ids :
-            raise IncorrectAccountId()
-
-    except IncorrectAccountId as e:
-        print(e)
-        exit()
-
+except IncorrectAccountId as e:
+    print(e)
+    exit()
 print(users_dict)
+
 
 transfer_info = {'from_account_id':from_account,
                  'to_account_id':to_account,
                  'amount':transfer_amount,
-                 'date':str(datetime.datetime.utcnow())}
-
-print(transfer_info)
+                 'date':str(datetime.datetime.now())}
 
 data['bank_transfers'].append(transfer_info)
-
 for user in data['users']:
     user['current_balance'] = users_dict[user['account_id']]
 
 with open('bank_transfers_data.json', 'w') as json_file:
     json.dump(data, json_file, indent=4)
-
 
