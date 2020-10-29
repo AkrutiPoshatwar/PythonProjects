@@ -1,0 +1,75 @@
+{
+	"users": [
+		{
+			"account_id": "101",
+			"name": "bob",
+			"current_balance": 24000
+		},
+		{
+			"account_id": "102",
+			"name": "alice",
+			"current_balance": 30000
+		},
+		{
+			"account_id": "105",
+			"name": "arjun",
+			"current_balance": 35000
+		}
+	],
+	"bank_transfers": [
+		{
+			"from_account_id": "101",
+			"to_account_id": "102",
+			"amount": 500,
+			"date": "24/10/2020 03:00"
+		},
+        {
+            "from_account_id": "101",
+            "to_account_id": "105",
+            "amount": 220,
+            "date": "24/10/2020 07:00"
+        },
+        {
+            "from_account_id": "105",
+            "to_account_id": "102",
+            "amount": 350,
+            "date": "24/10/2020 05:00"
+        },
+		{
+            "from_account_id": "102",
+            "to_account_id": "105",
+            "amount": 400,
+            "date": "24/10/2020 06:00"
+        },
+		{
+            "from_account_id": "102",
+            "to_account_id": "105",
+            "amount": 40000,
+            "date": "24/10/2020 10:00"
+        },
+		{
+            "from_account_id": "101",
+            "to_account_id": "105",
+            "amount": 50000,
+            "date": "24/10/2020 11:30"
+        },
+		{
+            "from_account_id": "105",
+            "to_account_id": "101",
+            "amount": 60000,
+            "date": "24/10/2020 11:40"
+        },
+		{
+            "from_account_id": "102",
+            "to_account_id": "101",
+            "amount": 500,
+            "date": "24/10/2020 10:30"
+        },
+		{
+            "from_account_id": "105",
+            "to_account_id": "101",
+            "amount": 70000,
+            "date": "24/10/2020 12:40"
+        }
+	]
+}
