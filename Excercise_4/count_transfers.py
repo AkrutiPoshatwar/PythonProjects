@@ -13,7 +13,6 @@ invalid_transfers ={}
 credited_to = {}
 debited_to ={}
 
-
 for transfer in sorted_bank_transfers:
 
     if transfer['amount'] <= users_dict[transfer['from_account_id']]:
@@ -31,7 +30,6 @@ for transfer in sorted_bank_transfers:
         else:
             credited_to.update({transfer['to_account_id']: 1})
 
-
     else:
         if transfer['from_account_id'] in invalid_transfers:
             invalid_transfers[transfer['from_account_id']].append(transfer['date'])
@@ -40,19 +38,13 @@ for transfer in sorted_bank_transfers:
 
 print(invalid_transfers)
 
-
 transfer_info={}
-user_transfer_info ={}
 for key in users_dict:
     transfer_info['credits'] = credited_to[key]
     transfer_info['debits'] = debited_to[key]
     transfer_info['Invalid_transfers'] = invalid_transfers[key]
     transfer_info['current_balance'] = users_dict[key]
 
-    user_transfer_info[key] = transfer_info
+    users_dict[key] = transfer_info
 
-print(json.dumps(user_transfer_info, indent=4))
-
-
-
-
+print(json.dumps(users_dict, indent=4))
