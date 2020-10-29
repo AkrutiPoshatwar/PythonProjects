@@ -23,8 +23,6 @@ for transfer in sorted_bank_transfers:
 
         if transfer['from_account_id'] in debited_to:
             debited_to[transfer['from_account_id']]+= 1
-
-            print('hiii',debited_to[transfer['from_account_id']])
         else:
             debited_to.update({transfer['from_account_id']:1})
 
@@ -50,8 +48,6 @@ for key in users_dict:
     transfer_info['debits'] = debited_to[key]
     transfer_info['Invalid_transfers'] = invalid_transfers[key]
     transfer_info['current_balance'] = users_dict[key]
-
-    print(transfer_info['debits'])
 
     user_transfer_info[key] = transfer_info
 
