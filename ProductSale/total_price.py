@@ -25,7 +25,6 @@ for product in sorted_products:
 
     product_dict ={'name':product['name'],
                    'totalSales': product['totalSales'],
-                   'product_price': product['totalSales']* product['price'],
                    'percentage':str(int(product_percentage))+'%',
                    'cumulativePercentage':str(int(cumulative_percentage))+'%'}
 
