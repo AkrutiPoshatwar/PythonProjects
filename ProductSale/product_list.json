@@ -1,0 +1,20 @@
+[
+	{
+		"name": "A",
+		"price": 12,
+		"currency": "euro",
+    	"totalSales": 10000
+	},
+    {
+		"name": "B",
+		"price": 14,
+		"currency": "doller",
+    	"totalSales": 5000
+	},
+    {
+		"name": "C",
+		"price": 50,
+		"currency": "rupee",
+    	"totalSales": 4000
+	}
+]
