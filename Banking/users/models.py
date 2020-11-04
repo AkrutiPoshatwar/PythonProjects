@@ -11,6 +11,5 @@ class Transaction(models.Model):
     to_account_id = models.CharField(max_length=100)
     amount = models.IntegerField(default=0)
     date = models.DateTimeField(auto_now_add=True)
-    users = models.ManyToManyField('User', related_name='transactions')
 
 
